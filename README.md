@@ -26,29 +26,61 @@ A full subtractor is a combinational circuit that performs subtraction involving
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
+Write the detailed procedure here
 
+1.Use module projname(input,output) to start the Verilog programmming.
 
+2.Assign inputs and outputs using the word input and output respectively.
 
-Write the detailed procedure here 
+3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
 
+4.Use each output to represnt onre for differnce and the other for borrow.
+
+5.End the verilog program using keyword endmodule.
 
 ## Program:
 /*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: mahesh raj purohit.j
+RegisterNumber:  22008605
 */
-
+### Half Subractor:
+```
+module exp3(output B,D, input X,Y);
+assign D = (X ^ Y);
+assign B = (~X & Y);
+endmodule
+```
+### Full Subractor:
+```
+module exp3(X,Y,Z,B,D);
+input X,Y,Z;
+output B,D;
+assign D = (X^Y^Z);
+assign B = (~X&(Y^Z)|(Y&Z));
+endmodule
+```
 ## Output:
 
+### RTL realization
+![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/d3.png)
+
+
 ## Truthtable
+![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/hst.png)
 
 
+### Timing diagram 
+![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/htd.jpeg)
 
-##  RTL realization
+### RTL realization
+![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/d3.1.png)
 
+### Truthtable
+![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/ft.png)
 
 ## Timing diagram 
+![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/ftd.jpeg)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
