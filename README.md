@@ -46,18 +46,24 @@ RegisterNumber:  22008605
 */
 ### Half Subractor:
 ```
-module exp3(output B,D, input X,Y);
-assign D = (X ^ Y);
-assign B = (~X & Y);
+module HalfSubtractor(A,B,Diff,Borrow);
+input A,B;
+output Diff,Borrow;
+wire x;
+xor (Diff, A,B);
+not(x,A);
+and(Borrow,x,B);
 endmodule
 ```
 ### Full Subractor:
 ```
-module exp3(X,Y,Z,B,D);
-input X,Y,Z;
-output B,D;
-assign D = (X^Y^Z);
-assign B = (~X&(Y^Z)|(Y&Z));
+module FullSubtractor(A,B,C,Diff,Borrow);
+input A,B,C;
+output Diff,Borrow;
+wire p;
+assign Diff = ((A^B)^C);
+not(p,A);
+assign Borrow = ((p&B)|(p&C)|(B&C));
 endmodule
 ```
 ## Output:
