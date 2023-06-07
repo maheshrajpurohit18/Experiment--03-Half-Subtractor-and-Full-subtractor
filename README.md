@@ -25,18 +25,18 @@ A full subtractor is a combinational circuit that performs subtraction involving
 
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
-## Procedure
+### Procedure
 Write the detailed procedure here
-
-1.Use module projname(input,output) to start the Verilog programmming.
-
-2.Assign inputs and outputs using the word input and output respectively.
-
-3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
-
-4.Use each output to represnt onre for differnce and the other for borrow.
-
-5.End the verilog program using keyword endmodule.
+## step 1
+Use module projname(input,output) to start the Verilog programmming.
+## step 2
+Assign inputs and outputs using the word input and output respectively.
+## step 3
+Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
+## step 4
+Use each output to represnt onre for differnce and the other for borrow.
+## step 5
+End the verilog program using keyword endmodule.
 
 ## Program:
 /*
@@ -68,6 +68,11 @@ endmodule
 ```
 ## Output:
 
+### HALF SUBTRACTOR:
+
+### GATES:
+![image](https://user-images.githubusercontent.com/118753139/243915979-311a1e36-e019-420a-8ce9-0e9f701f0ab8.png)
+
 ### RTL realization
 ![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/d3.png)
 
@@ -78,6 +83,11 @@ endmodule
 
 ### Timing diagram 
 ![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/htd.jpeg)
+
+### FULL SUBTRACTOR:
+
+### GATES:
+![image](https://user-images.githubusercontent.com/118753139/243916518-a1654bf9-b079-4e1e-8975-caa4ecd1bb93.png)
 
 ### RTL realization
 ![output](https://github.com/21003698/Experiment--03-Half-Subtractor-and-Full-subtractor/raw/main/d3.1.png)
