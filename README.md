@@ -46,25 +46,22 @@ RegisterNumber:  22008605
 */
 ### Half Subractor:
 ```
-module HalfSubtractor(A,B,Diff,Borrow);
-input A,B;
-output Diff,Borrow;
-wire x;
-xor (Diff, A,B);
-not(x,A);
-and(Borrow,x,B);
+module halfsub(A,B,Diff,Borrow);
+input A,B; 
+output Diff,borrow;
+asssign Diff = (A ^ B);
+assign Borrow = (~A & B);
 endmodule
+
 ```
 ### Full Subractor:
 ```
-module FullSubtractor(A,B,C,Diff,Borrow);
+module fullsub(A,B,C,Diff,Borrow);
 input A,B,C;
 output Diff,Borrow;
-wire p;
-assign Diff = ((A^B)^C);
-not(p,A);
-assign Borrow = ((p&B)|(p&C)|(B&C));
-endmodule  
+assign Diff = (A^B^C);
+assign borrow = (~a&(b^c)|(b&c));
+endmodule
 ```
 ## Output:
 
@@ -74,7 +71,7 @@ endmodule
 ![image](https://user-images.githubusercontent.com/118753139/243915979-311a1e36-e019-420a-8ce9-0e9f701f0ab8.png)
 
 ### RTL realization
-![image](https://user-images.githubusercontent.com/118753139/243916177-56a925c7-a244-4605-b8cc-e99452fe5ad4.png)
+![image](https://user-images.githubusercontent.com/121117266/233019413-f4133c5f-a771-4516-8c64-e04f4a3af296.png)
 
 
 ## Truthtable
@@ -82,7 +79,7 @@ endmodule
 
 
 ### Timing diagram 
-![image](https://user-images.githubusercontent.com/118753139/243916403-20f35849-b5b3-45de-9ac4-fbdc4230a1e1.png)
+![image](https://user-images.githubusercontent.com/121117266/233019578-1e94a96c-79b1-4e24-b9ae-ff98a88f52fd.png)
 
 ### FULL SUBTRACTOR:
 
@@ -90,13 +87,13 @@ endmodule
 ![image](https://user-images.githubusercontent.com/118753139/243916518-a1654bf9-b079-4e1e-8975-caa4ecd1bb93.png)
 
 ### RTL realization
-![image](https://user-images.githubusercontent.com/118753139/243916559-c0921d19-6363-44a9-ada6-ab97c0b0fd81.png)
+![image](https://user-images.githubusercontent.com/121117266/233019477-6bf66d6d-3c50-475f-88e6-288a73199ef3.png)
 
 ### Truthtable
 ![image](https://user-images.githubusercontent.com/118753139/243916616-a87d1dce-f1d1-4bf7-826c-d7f04963c8d7.png)
 
 ## Timing diagram 
-![image](https://user-images.githubusercontent.com/118753139/243916649-4063afcb-1ff7-4970-944f-c44788f4d661.png)
+![image](https://user-images.githubusercontent.com/121117266/233019633-6ab6b0e2-3a93-4626-ba45-e99635c9a43b.png)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
